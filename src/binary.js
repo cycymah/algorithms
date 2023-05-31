@@ -10,14 +10,14 @@ for (let i = 0; i <= generateNumsCount; i++) {
 // Поиск стандартными методами arr
 const findNumberRegular = (num) => nums.find((n) => n.value === num)?.name ?? 'Не найдено';
 
-// Поиск перебором
+// Поиск перебором O(n)
 const customRecular = (num) => {
   for (let i = 0; i < nums.length; i++) {
     if (nums[i].value === num) return nums[i].name
   }
 };
 
-// Бинарный поиск
+// Бинарный поиск O(log n)
 const binaryFind = (num) => {
   let start = 0;
   let end = nums.length - 1;

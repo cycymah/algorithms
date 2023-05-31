@@ -6,7 +6,7 @@ for (let i = 0; i <= generateSortNumsCount; i++) {
   arrToSort.push(Math.round(Math.random() * 10));
 }
 
-// Сортировка выбором
+// Сортировка выбором О(n2)
 const sortCustom = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
@@ -21,10 +21,11 @@ const sortCustom = (arr) => {
   return arr;
 }
 
-// Быстрая сортировка с применением рекурсии и принципом Разделяй и влавствуй
+// Быстрая сортировка с применением рекурсии и принципом Разделяй и влавствуй O(n log n)
 const quickSort = (arr) => {
   if (arr.length <= 1) return arr
 
+  // Делим пополам, чтобы равномерно разбить на 2 подмассива
   const refValue = arr[Math.floor(arr.length / 2)];
   const left = [];
   const right = [];
