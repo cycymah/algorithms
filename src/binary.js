@@ -37,6 +37,10 @@ const binaryFind = (num) => {
   return 'Не найдено';
 };
 
+console.time('lodash');
+const lodashFindIndex = _.findIndex(nums, (el) => el.value === findNumber)
+console.timeEnd('lodash');
+
 console.time('regular');
 const findedRegular = findNumberRegular(findNumber);
 console.timeEnd('regular');
@@ -49,4 +53,4 @@ console.time('binary');
 const binaryFindRes = binaryFind(findNumber);
 console.timeEnd('binary');
 
-console.log(findedRegular, findedCustomRegular, binaryFindRes);
+console.log(findedRegular, findedCustomRegular, binaryFindRes, nums[lodashFindIndex]);
